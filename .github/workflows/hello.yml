@@ -1,0 +1,10 @@
+jobs:
+  - name: say hi
+
+    runs-on: ubuntu-latest
+    steps:
+    run: echo "Hello, world!"
+           - name: say hi again
+           run: echo "Hello, world again!"
+           - name: say hi again and again
+               run: echo "Hello, world again and again!"
