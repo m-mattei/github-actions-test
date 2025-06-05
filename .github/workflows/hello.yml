@@ -1,10 +1,28 @@
-jobs:
-  - name: say hi
+name: Hello Workflow
 
+on:
+  workflow_dispatch:
+    inputs:
+      message:
+        description: 'Enter your message'
+        required: true
+        type: string
+      choice:
+        description: 'Choose an option'
+        required: true
+        type: choice
+        options:
+          - Option A
+          - Option B
+          - Option C
+
+jobs:
+  print-inputs:
     runs-on: ubuntu-latest
     steps:
-    run: echo "Hello, world!"
-           - name: say hi again
-           run: echo "Hello, world again!"
-           - name: say hi again and again
-               run: echo "Hello, world again and again!"
+      - name: Print inputs
+        run: |
+          echo "=============================="
+          echo "Your Message: ${{ github.event.inputs.message }}"
+          echo "Selected Option: ${{ github.event.inputs.choice }}"
+          echo "=============================="
