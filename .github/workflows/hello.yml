@@ -1,21 +1,12 @@
 name: Hello Workflow
 
 on:
-  workflow_dispatch:
+  workflow_call:
     inputs:
       message:
         description: 'Enter your message'
         required: true
         type: string
-      choice:
-        description: 'Choose an option'
-        required: true
-        type: choice
-        options:
-          - Option A
-          - Option B
-          - Option C
-
 jobs:
   print-inputs:
     runs-on: ubuntu-latest
