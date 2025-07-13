@@ -15,5 +15,4 @@ jobs:
         run: |
           echo "=============================="
           echo "Your Message: ${{ github.event.inputs.message }}"
-          echo "Selected Option: ${{ github.event.inputs.choice }}"
           echo "=============================="
