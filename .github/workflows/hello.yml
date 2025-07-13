@@ -3,7 +3,11 @@ name: Hello Workflow
 on:
   workflow_call:
     inputs:
-      message:
+      literal:
+        description: 'Enter your message'
+        required: true
+        type: string
+      variable:
         description: 'Enter your message'
         required: true
         type: string
@@ -13,6 +17,8 @@ jobs:
     steps:
       - name: Print inputs
         run: |
+          echo "Your Literal: ${{ github.event.inputs.literal }}"
           echo "=============================="
-          echo "Your Message: ${{ github.event.inputs.message }}"
+          echo "Your Variable: ${{ github.event.inputs.variable }}"
           echo "=============================="
+          
