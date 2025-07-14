@@ -17,8 +17,8 @@ jobs:
     steps:
       - name: Print inputs
         run: |
-          echo "Your Literal: ${{ github.event.inputs.literal }}"
+          echo "Your Literal: ${{ inputs.literal }}"
           echo "=============================="
-          echo "Your Variable: ${{ github.event.inputs.variable }}"
+          echo "Your Variable: ${{ inputs.variable }}"
           echo "=============================="
           
