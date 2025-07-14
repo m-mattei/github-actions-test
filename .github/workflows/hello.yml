@@ -3,11 +3,7 @@ name: Hello Workflow
 on:
   workflow_call:
     inputs:
-      literal:
-        description: 'Enter your message'
-        required: true
-        type: string
-      variable:
+      message:
         description: 'Enter your message'
         required: true
         type: string
@@ -17,8 +13,6 @@ jobs:
     steps:
       - name: Print inputs
         run: |
-          echo "Your Literal: ${{ inputs.literal }}"
-          echo "=============================="
-          echo "Your Variable: ${{ inputs.variable }}"
+          echo "Your Message: ${{ inputs.message }}"
           echo "=============================="
           
