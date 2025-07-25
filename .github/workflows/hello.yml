@@ -14,5 +14,7 @@ jobs:
       - name: Print inputs
         run: |
           echo "Your Message: ${{ inputs.message }}"
+          echo ${{ github.repository }}
+          echo ${{ env }}
           echo "=============================="
           
