@@ -3,24 +3,14 @@ name: Hello Workflow
 on:
   workflow_call:
     inputs:
-      environment:
-        description: 'Deployment environment'
-        required: true
-        type: string
       message:
         description: 'Enter your message'
         required: true
         type: string
 jobs:
   print-inputs:
-    environment: ${{ inputs.environment }}
     runs-on: ubuntu-latest
     steps:
-      - name: print environment variables
-        run: |
-          echo "URL: ${{ github.env.URL }}"
-          echo "URL: ${{ vars.URL }}"
-          echo "=============================="
       - name: Print inputs
         run: |
           echo "Your Message: ${{ inputs.message }}"
