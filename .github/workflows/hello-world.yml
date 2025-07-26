@@ -13,6 +13,7 @@ on:
         type: string
 jobs:
   print-inputs:
+    environment: ${{ inputs.environment }}
     runs-on: ubuntu-latest
     steps:
       - name: print environment variables
