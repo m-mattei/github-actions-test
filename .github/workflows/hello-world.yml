@@ -3,12 +3,17 @@ name: Hello Workflow
 on:
   workflow_call:
     inputs:
+      environment:
+        description: 'Environment to deploy to'
+        required: true
+        type: string
       message:
         description: 'Enter your message'
         required: true
         type: string
 jobs:
   print-inputs:
+    environment: ${{ inputs.environment }}
     runs-on: ubuntu-latest
     steps:
       - name: Print inputs
