@@ -4,8 +4,8 @@ on:
   workflow_call:
     inputs:
       environment:
-        description: 'Environment variables to set'
-        required: false
+        description: 'Deployment environment'
+        required: true
         type: string
       message:
         description: 'Enter your message'
@@ -15,11 +15,9 @@ jobs:
   print-inputs:
     runs-on: ubuntu-latest
     steps:
-      - name: pring environment variables
+      - name: print environment variables
         run: |
-          echo "Environment Variables:"
-          echo "${{ inputs.environment }}"
-          echo "${{ env.URL }}"
+          echo "Environment: ${{ inputs.environment }}"
           echo "=============================="
       - name: Print inputs
         run: |
