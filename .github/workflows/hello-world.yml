@@ -17,8 +17,7 @@ jobs:
     steps:
       - name: print environment variables
         run: |
-          echo "Environment: ${{ github.env }}"
-          echo "URL: ${{ vars.URL }}"
+          echo "Environment: ${{ github.env.URL }}"
           echo "=============================="
       - name: Print inputs
         run: |
