@@ -3,6 +3,10 @@ name: Hello Workflow
 on:
   workflow_call:
     inputs:
+      environment:
+        description: 'Environment variables to set'
+        required: false
+        type: string
       message:
         description: 'Enter your message'
         required: true
@@ -11,6 +15,12 @@ jobs:
   print-inputs:
     runs-on: ubuntu-latest
     steps:
+      - name: pring environment variables
+        run: |
+          echo "Environment Variables:"
+          echo "${{ inputs.environment }}"
+          echo "${{ env.URL }}"
+          echo "=============================="
       - name: Print inputs
         run: |
           echo "Your Message: ${{ inputs.message }}"
@@ -37,5 +47,3 @@ jobs:
           echo '${{ toJson(job) }}'
           echo "RUNNER_CONTEXT:"
           echo '${{ toJson(runner) }}'
-          echo "ENVIRONMENT VARIABLES:"
-          env
